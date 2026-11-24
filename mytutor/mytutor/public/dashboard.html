@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MyTutor connects NUST students with approved peer tutors for their modules.">
+    <title>Dashboard | MyTutor</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+        <a class="logo" href="index.html"><img class="logo-mark" src="images/logo.svg" alt="" width="34" height="34"><span class="logo-text">My<span>Tutor</span></span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="tutors.html">Tutors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="authLinks" class="auth-slot"></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">
+
+<section class="container">
+    <div class="dash-header">
+        <div><p class="eyebrow" id="roleLabel">Dashboard</p><h1 id="welcome">Welcome</h1></div>
+        <div class="btn-row" id="dashActions"></div>
+    </div>
+    <p id="pageStatus" class="status" role="status" aria-live="polite"></p>
+
+    <div id="studentView" class="dash-grid" hidden>
+        <section class="card span-2"><h2>My applications</h2><div id="myApplications"></div></section>
+        <section class="card"><h2>Upcoming sessions</h2><div id="studentSessions"></div></section>
+        <section class="card"><h2>Materials for my modules</h2><div id="studentMaterials"></div></section>
+    </div>
+
+    <div id="tutorView" class="dash-grid" hidden>
+        <section class="card span-2"><h2>Student applications</h2><div id="incoming"></div></section>
+        <section class="card"><h2>My public profile</h2>
+            <form id="profileForm" novalidate>
+                <div class="field"><label for="bio">Bio <span class="hint">(shown on your tutor profile, 500 characters max)</span></label><textarea id="bio" name="bio" maxlength="500"></textarea></div>
+                <button class="btn" type="submit">Save profile</button>
+                <a class="btn btn-outline" id="viewProfile" href="tutors.html">View my profile</a>
+                <p id="profileStatus" class="status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+        <section class="card"><h2>Upload material</h2>
+            <form id="materialForm" novalidate>
+                <div class="field"><label for="mModule">Module</label><select id="mModule" name="moduleId" required></select></div>
+                <div class="field"><label for="mTitle">Title</label><input type="text" id="mTitle" name="title" maxlength="120" required></div>
+                <div class="form-row">
+                    <div class="field"><label for="mKind">Type</label><select id="mKind" name="kind"><option value="notes">Notes</option><option value="slides">Slides</option><option value="past_paper">Past paper</option><option value="video">Video</option><option value="other">Other</option></select></div>
+                    <div class="field"><label for="mVis">Visible to</label><select id="mVis" name="visibility"><option value="public">All students</option><option value="students_only">My students only</option></select></div>
+                </div>
+                <div class="field"><label for="mFile">File <span class="hint">(pdf, docx, pptx, zip, png, jpg, mp4 - 15 MB max)</span></label><input type="file" id="mFile" name="file"></div>
+                <div class="field"><label for="mLink">...or a link</label><input type="url" id="mLink" name="linkUrl" placeholder="https://"></div>
+                <button class="btn" type="submit">Upload</button>
+                <p id="materialStatus" class="status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+        <section class="card"><h2>Schedule a session</h2>
+            <form id="sessionForm" novalidate>
+                <div class="field"><label for="sModule">Module</label><select id="sModule" name="moduleId" required></select></div>
+                <div class="field"><label for="sTitle">Title</label><input type="text" id="sTitle" name="title" maxlength="120" required></div>
+                <div class="form-row">
+                    <div class="field"><label for="sStart">Starts</label><input type="datetime-local" id="sStart" name="startsAt" required></div>
+                    <div class="field"><label for="sDur">Minutes</label><input type="number" id="sDur" name="duration" value="60" min="15" max="240" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="field"><label for="sVenue">Venue or link</label><input type="text" id="sVenue" name="venue" maxlength="200" required></div>
+                    <div class="field"><label for="sCap">Capacity</label><input type="number" id="sCap" name="capacity" value="20" min="1" max="500" required></div>
+                </div>
+                <button class="btn" type="submit">Schedule</button>
+                <p id="sessionStatus" class="status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+        <section class="card"><h2>My sessions</h2><div id="tutorSessions"></div></section>
+        <section class="card"><h2>My modules and materials</h2><div id="tutorModules"></div><div id="tutorMaterials" class="mt"></div></section>
+    </div>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <strong>MyTutor</strong>
+            <p>Peer tutoring for NUST students. &copy; <span id="year">2026</span> MyTutor.</p>
+        </div>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

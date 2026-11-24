@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MyTutor connects NUST students with approved peer tutors for their modules.">
+    <title>Modules | MyTutor</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+        <a class="logo" href="index.html"><img class="logo-mark" src="images/logo.svg" alt="" width="34" height="34"><span class="logo-text">My<span>Tutor</span></span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="tutors.html">Tutors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="authLinks" class="auth-slot"></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">
+
+<section class="container page-title">
+    <p class="eyebrow">Module catalogue</p>
+    <h1>Find your module</h1>
+    <p>Search by code or name, or filter by department and level.</p>
+</section>
+<section class="container section">
+    <form id="filterForm" class="filter-bar" role="search">
+        <div class="field"><label for="q">Search</label><input type="search" id="q" name="q" placeholder="e.g. WAD621S, databases"></div>
+        <div class="field"><label for="department">Department</label>
+            <select id="department" name="department"><option value="">All departments</option></select></div>
+        <div class="field"><label for="level">Level</label>
+            <select id="level" name="level"><option value="">All levels</option><option>1</option><option>2</option><option>3</option><option>4</option></select></div>
+        <div class="field btn-cell"><button class="btn" type="submit">Apply filters</button></div>
+    </form>
+    <p id="resultCount" class="hint" aria-live="polite"></p>
+    <div class="grid" id="moduleGrid"><p class="loading">Loading modules...</p></div>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <strong>MyTutor</strong>
+            <p>Peer tutoring for NUST students. &copy; <span id="year">2026</span> MyTutor.</p>
+        </div>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="js/modules.js"></script>
+</body>
+</html>

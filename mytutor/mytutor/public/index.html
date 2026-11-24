@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MyTutor connects NUST students with approved peer tutors for their modules.">
+    <title>Home | MyTutor</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+        <a class="logo" href="index.html"><img class="logo-mark" src="images/logo.svg" alt="" width="34" height="34"><span class="logo-text">My<span>Tutor</span></span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="tutors.html">Tutors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="authLinks" class="auth-slot"></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">
+
+<section class="hero" aria-labelledby="heroTitle">
+    <div class="container">
+        <p class="eyebrow">Peer tutoring for NUST students</p>
+        <h1 id="heroTitle">Pass your modules with <em>help from students who passed them</em></h1>
+        <p class="lead">Find an approved tutor for your module, apply for tutoring, join live sessions and download study materials, all in one place.</p>
+        <form class="hero-search" action="modules.html" method="get" role="search">
+            <label class="sr-only" for="heroQ">Search modules</label>
+            <input type="search" id="heroQ" name="q" placeholder="Search a module, e.g. WAD621S or Statistics">
+            <button class="btn" type="submit">Search</button>
+        </form>
+        <div class="btn-row">
+            <a class="btn" href="register.html">Get started</a>
+            <a class="btn btn-outline" href="modules.html">Browse modules</a>
+        </div>
+        <div class="stats" aria-label="Platform numbers">
+            <div><strong id="statModules">-</strong><span>Modules</span></div>
+            <div><strong id="statTutors">-</strong><span>Tutor places</span></div>
+            <div><strong>Free</strong><span>For students</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="whyTitle">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">Why MyTutor</p>
+            <h2 id="whyTitle">Support that fits around your timetable</h2>
+        </div>
+        <div class="grid">
+            <article class="feature"><div class="num">01</div><h3>Vetted tutors</h3><p>Every tutor and every module they teach is approved by an administrator before students can book them.</p></article>
+            <article class="feature"><div class="num">02</div><h3>Materials in one place</h3><p>Notes, slides and past papers are organised by module, so you always know where to find them.</p></article>
+            <article class="feature"><div class="num">03</div><h3>Live sessions</h3><p>See upcoming tutoring sessions, check the venue and RSVP with one click.</p></article>
+        </div>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="howTitle">
+    <div class="container">
+        <div class="section-heading">
+            <p class="eyebrow">How it works</p>
+            <h2 id="howTitle">Three steps to better marks</h2>
+        </div>
+        <ol class="grid plain">
+            <li class="feature"><div class="num">1</div><h3>Create your account</h3><p>Register as a student with your NUST email. Tutors register too and wait for approval.</p></li>
+            <li class="feature"><div class="num">2</div><h3>Apply for a module</h3><p>Pick a module, choose a tutor (or let any approved tutor accept) and tell them what you need.</p></li>
+            <li class="feature"><div class="num">3</div><h3>Learn and review</h3><p>Join sessions, use the materials and rate your tutor to help other students.</p></li>
+        </ol>
+    </div>
+</section>
+
+<section class="section" aria-labelledby="popularTitle">
+    <div class="container">
+        <div class="section-heading"><p class="eyebrow">Popular right now</p><h2 id="popularTitle">Modules with tutors available</h2></div>
+        <div class="grid" id="popularModules"><p class="loading">Loading modules...</p></div>
+        <p class="text-center mt"><a class="btn btn-outline" href="modules.html">See all modules</a></p>
+    </div>
+</section>
+
+<section class="container section">
+    <div class="cta-banner">
+        <div><p class="eyebrow">Start today</p><h2>Ready to improve your marks?</h2></div>
+        <a class="btn" href="register.html">Create a free account</a>
+    </div>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <strong>MyTutor</strong>
+            <p>Peer tutoring for NUST students. &copy; <span id="year">2026</span> MyTutor.</p>
+        </div>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>

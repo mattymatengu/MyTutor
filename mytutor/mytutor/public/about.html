@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MyTutor connects NUST students with approved peer tutors for their modules.">
+    <title>About | MyTutor</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+        <a class="logo" href="index.html"><img class="logo-mark" src="images/logo.svg" alt="" width="34" height="34"><span class="logo-text">My<span>Tutor</span></span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="tutors.html">Tutors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="authLinks" class="auth-slot"></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">
+
+<section class="container page-title">
+    <p class="eyebrow">About MyTutor</p>
+    <h1>Students helping students pass</h1>
+    <p>MyTutor is a campus service built for the Namibia University of Science and Technology (NUST).</p>
+</section>
+
+<section class="container section">
+    <div class="grid-2">
+        <div class="stack">
+            <h2>The problem we solve</h2>
+            <p>Many NUST students struggle with difficult modules but do not know who can help. Notes are scattered across WhatsApp groups, and good tutors are hard to find.</p>
+            <p>MyTutor gives every module one home: approved tutors, shared materials and a calendar of live sessions.</p>
+            <h3>What you can do</h3>
+            <ul>
+                <li>Browse the module catalogue and search by code, name, department or level.</li>
+                <li>Apply for tutoring and track the status of your application.</li>
+                <li>Download notes, slides and past papers shared by tutors.</li>
+                <li>RSVP to live tutoring sessions and rate your tutor afterwards.</li>
+            </ul>
+        </div>
+        <img class="about-img" src="images/hero.jpg" alt="The NUST campus" width="960" height="640">
+    </div>
+</section>
+
+<section class="container section">
+    <h2>Who uses MyTutor?</h2>
+    <div class="table-wrap">
+        <table>
+            <caption class="sr-only">What each type of user can do</caption>
+            <thead><tr><th scope="col">Role</th><th scope="col">Can do</th><th scope="col">Needs approval?</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">Student</th><td>Browse modules, apply for tutoring, download materials, RSVP to sessions, review tutors</td><td>No</td></tr>
+                <tr><th scope="row">Tutor</th><td>Accept students, upload materials, schedule sessions for approved modules</td><td>Yes, by an administrator</td></tr>
+                <tr><th scope="row">Administrator</th><td>Manage modules, approve tutors, match students, moderate content, read contact messages</td><td>Created by the platform owner</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section class="container section">
+    <h2>Frequently asked questions</h2>
+    <details><summary>Is MyTutor free?</summary><p>Yes. Students do not pay to use the platform.</p></details>
+    <details><summary>How do I become a tutor?</summary><p>Register as a tutor, describe your qualification and choose the modules you want to teach. An administrator reviews your application before you can log in.</p></details>
+    <details><summary>Who can see the materials?</summary><p>Tutors choose whether a file is public to all logged-in students or only for the students they tutor.</p></details>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <strong>MyTutor</strong>
+            <p>Peer tutoring for NUST students. &copy; <span id="year">2026</span> MyTutor.</p>
+        </div>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MyTutor connects NUST students with approved peer tutors for their modules.">
+    <title>Admin | MyTutor</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+<header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+        <a class="logo" href="index.html"><img class="logo-mark" src="images/logo.svg" alt="" width="34" height="34"><span class="logo-text">My<span>Tutor</span></span></a>
+        <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="tutors.html">Tutors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li id="authLinks" class="auth-slot"></li>
+        </ul>
+    </nav>
+</header>
+<main id="main">
+
+<section class="container">
+    <div class="dash-header"><div><p class="eyebrow">Administration</p><h1>Admin panel</h1></div></div>
+    <p id="pageStatus" class="status" role="status" aria-live="polite"></p>
+    <div class="tabs" role="tablist" aria-label="Admin sections" id="adminTabs">
+        <button role="tab" type="button" data-tab="overview" aria-selected="true">Overview</button>
+        <button role="tab" type="button" data-tab="modules" aria-selected="false">Modules</button>
+        <button role="tab" type="button" data-tab="tutors" aria-selected="false">Tutors<span class="badge" id="badgeTutors" hidden>0</span></button>
+        <button role="tab" type="button" data-tab="applications" aria-selected="false">Applications</button>
+        <button role="tab" type="button" data-tab="users" aria-selected="false">Users</button>
+        <button role="tab" type="button" data-tab="materials" aria-selected="false">Materials</button>
+        <button role="tab" type="button" data-tab="sessions" aria-selected="false">Sessions</button>
+        <button role="tab" type="button" data-tab="reviews" aria-selected="false">Reviews</button>
+        <button role="tab" type="button" data-tab="resets" aria-selected="false">Password resets<span class="badge" id="badgeResets" hidden>0</span></button>
+        <button role="tab" type="button" data-tab="messages" aria-selected="false">Messages<span class="badge" id="badgeMessages" hidden>0</span></button>
+    </div>
+
+    <section id="tab-overview" role="tabpanel"><div class="stat-grid" id="statGrid"></div><div class="card"><h2>Most requested modules</h2><div id="demandList"></div></div></section>
+
+    <section id="tab-modules" role="tabpanel" hidden>
+        <div class="card mt">
+            <h2 id="moduleFormTitle">Add a module</h2>
+            <form id="moduleForm" novalidate>
+                <input type="hidden" id="moduleId" name="id">
+                <div class="form-row">
+                    <div class="field"><label for="code">Code</label><input type="text" id="code" name="code" maxlength="12" placeholder="WAD621S" required></div>
+                    <div class="field"><label for="name">Name</label><input type="text" id="name" name="name" maxlength="100" required></div>
+                </div>
+                <div class="form-row">
+                    <div class="field"><label for="dept">Department</label><input type="text" id="dept" name="department" maxlength="80" required></div>
+                    <div class="field"><label for="lvl">Level (1-4)</label><input type="number" id="lvl" name="level" min="1" max="4" value="1" required></div>
+                </div>
+                <div class="field"><label for="desc">Description</label><textarea id="desc" name="description" maxlength="500"></textarea></div>
+                <div class="btn-row"><button class="btn" type="submit" id="moduleSubmit">Add module</button><button class="btn btn-outline" type="button" id="moduleCancel" hidden>Cancel edit</button></div>
+                <p id="moduleStatus" class="status" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+        <div class="table-wrap mt" id="moduleTable"></div>
+    </section>
+
+    <section id="tab-tutors" role="tabpanel" hidden><div class="table-wrap mt" id="tutorTable"></div></section>
+    <section id="tab-applications" role="tabpanel" hidden><div class="table-wrap mt" id="applicationTable"></div></section>
+    <section id="tab-users" role="tabpanel" hidden><div class="table-wrap mt" id="userTable"></div></section>
+    <section id="tab-materials" role="tabpanel" hidden><div class="table-wrap mt" id="materialTable"></div></section>
+    <section id="tab-sessions" role="tabpanel" hidden><div class="table-wrap mt" id="sessionTable"></div></section>
+    <section id="tab-reviews" role="tabpanel" hidden><div class="table-wrap mt" id="reviewTable"></div></section>
+    <section id="tab-resets" role="tabpanel" hidden><p class="hint mt">Reset links are created and emailed automatically when a registered user asks for one. This is a log: you can revoke a link that has not been used yet.</p><div class="table-wrap mt" id="resetTable"></div></section>
+    <section id="tab-messages" role="tabpanel" hidden><div class="table-wrap mt" id="messageTable"></div></section>
+</section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner">
+        <div>
+            <strong>MyTutor</strong>
+            <p>Peer tutoring for NUST students. &copy; <span id="year">2026</span> MyTutor.</p>
+        </div>
+        <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="modules.html">Modules</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+</footer>
+<script src="js/app.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
